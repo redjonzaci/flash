@@ -1,0 +1,6 @@
+{
+  "AppSyncApiName": "flash",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2023-11-20T15:12:16.153Z"
+}

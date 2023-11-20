@@ -10,6 +10,11 @@
       "StackName": "amplify-flash-staging-153827",
       "StackId": "arn:aws:cloudformation:us-east-1:359533667606:stack/amplify-flash-staging-153827/aef70a50-86f1-11ee-a44b-0a6a638f5991",
       "AmplifyAppId": "d39kyvoqepxydg"
+    },
+    "categories": {
+      "api": {
+        "flash": {}
+      }
     }
   }
 }

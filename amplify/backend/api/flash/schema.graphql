@@ -1,0 +1,28 @@
+type Issue @model @auth(rules: [{allow: public}]) {
+  content: String!
+  timestamp: AWSDateTime!
+  source: Source
+}
+
+type Source {
+  type: SourceType!
+  url: String!
+}
+
+enum SourceType {
+  REDDIT
+}
+
+type Ticket @model @auth(rules: [{allow: public, operations: [read]}]) {
+  title: String!
+  description: String!
+  timestamp: AWSDateTime!
+  severity: Severity!
+}
+
+enum Severity {
+  LOW
+  MEDIUM
+  HIGH
+}
+ 
