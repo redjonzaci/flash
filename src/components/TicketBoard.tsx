@@ -41,7 +41,7 @@ export default function TicketBoard() {
         {tickets.map((ticket) => (
           <tr className="tds-table-row" key={ticket.id}>
             <td>
-              <a href={ticket.url} className="tds-link">
+              <a href={ticket.url} className="tds-link" target="_blank">
                 {ticket.title} (
                 {ticket.sourceType[0] +
                   ticket.sourceType.toLowerCase().slice(1)}
