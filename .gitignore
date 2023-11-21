@@ -46,3 +46,4 @@ amplifytools.xcconfig
 #amplify-do-not-edit-end
 
 src/ui-components/
+amplify/backend/function/**/bin*

@@ -2,16 +2,15 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateIssueInput = {
+export type CreateTicketInput = {
+  title: string,
   content: string,
-  timestamp: string,
-  source?: SourceInput | null,
-  id?: string | null,
-};
-
-export type SourceInput = {
-  type: SourceType,
   url: string,
+  sourceType: SourceType,
+  timestamp: string,
+  severity?: Severity | null,
+  id?: string | null,
+  _version?: number | null,
 };
 
 export enum SourceType {
@@ -19,12 +18,24 @@ export enum SourceType {
 }
 
 
-export type ModelIssueConditionInput = {
+export enum Severity {
+  LOW = "LOW",
+  MEDIUM = "MEDIUM",
+  HIGH = "HIGH",
+}
+
+
+export type ModelTicketConditionInput = {
+  title?: ModelStringInput | null,
   content?: ModelStringInput | null,
+  url?: ModelStringInput | null,
+  sourceType?: ModelSourceTypeInput | null,
   timestamp?: ModelStringInput | null,
-  and?: Array< ModelIssueConditionInput | null > | null,
-  or?: Array< ModelIssueConditionInput | null > | null,
-  not?: ModelIssueConditionInput | null,
+  severity?: ModelSeverityInput | null,
+  and?: Array< ModelTicketConditionInput | null > | null,
+  or?: Array< ModelTicketConditionInput | null > | null,
+  not?: ModelTicketConditionInput | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type ModelStringInput = {
@@ -67,56 +78,9 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
-export type Issue = {
-  __typename: "Issue",
-  content: string,
-  timestamp: string,
-  source?: Source | null,
-  id: string,
-  createdAt: string,
-  updatedAt: string,
-};
-
-export type Source = {
-  __typename: "Source",
-  type: SourceType,
-  url: string,
-};
-
-export type UpdateIssueInput = {
-  content?: string | null,
-  timestamp?: string | null,
-  source?: SourceInput | null,
-  id: string,
-};
-
-export type DeleteIssueInput = {
-  id: string,
-};
-
-export type CreateTicketInput = {
-  title: string,
-  description: string,
-  timestamp: string,
-  severity: Severity,
-  id?: string | null,
-};
-
-export enum Severity {
-  LOW = "LOW",
-  MEDIUM = "MEDIUM",
-  HIGH = "HIGH",
-}
-
-
-export type ModelTicketConditionInput = {
-  title?: ModelStringInput | null,
-  description?: ModelStringInput | null,
-  timestamp?: ModelStringInput | null,
-  severity?: ModelSeverityInput | null,
-  and?: Array< ModelTicketConditionInput | null > | null,
-  or?: Array< ModelTicketConditionInput | null > | null,
-  not?: ModelTicketConditionInput | null,
+export type ModelSourceTypeInput = {
+  eq?: SourceType | null,
+  ne?: SourceType | null,
 };
 
 export type ModelSeverityInput = {
@@ -124,64 +88,81 @@ export type ModelSeverityInput = {
   ne?: Severity | null,
 };
 
+export type ModelBooleanInput = {
+  ne?: boolean | null,
+  eq?: boolean | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
+};
+
 export type Ticket = {
   __typename: "Ticket",
   title: string,
-  description: string,
+  content: string,
+  url: string,
+  sourceType: SourceType,
   timestamp: string,
-  severity: Severity,
+  severity?: Severity | null,
   id: string,
   createdAt: string,
   updatedAt: string,
+  _version: number,
+  _deleted?: boolean | null,
+  _lastChangedAt: number,
 };
 
 export type UpdateTicketInput = {
   title?: string | null,
-  description?: string | null,
+  content?: string | null,
+  url?: string | null,
+  sourceType?: SourceType | null,
   timestamp?: string | null,
   severity?: Severity | null,
   id: string,
+  _version?: number | null,
 };
 
 export type DeleteTicketInput = {
   id: string,
-};
-
-export type ModelIssueFilterInput = {
-  content?: ModelStringInput | null,
-  timestamp?: ModelStringInput | null,
-  and?: Array< ModelIssueFilterInput | null > | null,
-  or?: Array< ModelIssueFilterInput | null > | null,
-  not?: ModelIssueFilterInput | null,
-};
-
-export type ModelIssueConnection = {
-  __typename: "ModelIssueConnection",
-  items:  Array<Issue | null >,
-  nextToken?: string | null,
+  _version?: number | null,
 };
 
 export type ModelTicketFilterInput = {
   title?: ModelStringInput | null,
-  description?: ModelStringInput | null,
+  content?: ModelStringInput | null,
+  url?: ModelStringInput | null,
+  sourceType?: ModelSourceTypeInput | null,
   timestamp?: ModelStringInput | null,
   severity?: ModelSeverityInput | null,
   and?: Array< ModelTicketFilterInput | null > | null,
   or?: Array< ModelTicketFilterInput | null > | null,
   not?: ModelTicketFilterInput | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type ModelTicketConnection = {
   __typename: "ModelTicketConnection",
   items:  Array<Ticket | null >,
   nextToken?: string | null,
+  startedAt?: number | null,
 };
 
-export type ModelSubscriptionIssueFilterInput = {
+export enum ModelSortDirection {
+  ASC = "ASC",
+  DESC = "DESC",
+}
+
+
+export type ModelSubscriptionTicketFilterInput = {
+  title?: ModelSubscriptionStringInput | null,
   content?: ModelSubscriptionStringInput | null,
+  url?: ModelSubscriptionStringInput | null,
+  sourceType?: ModelSubscriptionStringInput | null,
   timestamp?: ModelSubscriptionStringInput | null,
-  and?: Array< ModelSubscriptionIssueFilterInput | null > | null,
-  or?: Array< ModelSubscriptionIssueFilterInput | null > | null,
+  severity?: ModelSubscriptionStringInput | null,
+  and?: Array< ModelSubscriptionTicketFilterInput | null > | null,
+  or?: Array< ModelSubscriptionTicketFilterInput | null > | null,
+  _deleted?: ModelBooleanInput | null,
 };
 
 export type ModelSubscriptionStringInput = {
@@ -199,78 +180,6 @@ export type ModelSubscriptionStringInput = {
   notIn?: Array< string | null > | null,
 };
 
-export type ModelSubscriptionTicketFilterInput = {
-  title?: ModelSubscriptionStringInput | null,
-  description?: ModelSubscriptionStringInput | null,
-  timestamp?: ModelSubscriptionStringInput | null,
-  severity?: ModelSubscriptionStringInput | null,
-  and?: Array< ModelSubscriptionTicketFilterInput | null > | null,
-  or?: Array< ModelSubscriptionTicketFilterInput | null > | null,
-};
-
-export type CreateIssueMutationVariables = {
-  input: CreateIssueInput,
-  condition?: ModelIssueConditionInput | null,
-};
-
-export type CreateIssueMutation = {
-  createIssue?:  {
-    __typename: "Issue",
-    content: string,
-    timestamp: string,
-    source?:  {
-      __typename: "Source",
-      type: SourceType,
-      url: string,
-    } | null,
-    id: string,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type UpdateIssueMutationVariables = {
-  input: UpdateIssueInput,
-  condition?: ModelIssueConditionInput | null,
-};
-
-export type UpdateIssueMutation = {
-  updateIssue?:  {
-    __typename: "Issue",
-    content: string,
-    timestamp: string,
-    source?:  {
-      __typename: "Source",
-      type: SourceType,
-      url: string,
-    } | null,
-    id: string,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type DeleteIssueMutationVariables = {
-  input: DeleteIssueInput,
-  condition?: ModelIssueConditionInput | null,
-};
-
-export type DeleteIssueMutation = {
-  deleteIssue?:  {
-    __typename: "Issue",
-    content: string,
-    timestamp: string,
-    source?:  {
-      __typename: "Source",
-      type: SourceType,
-      url: string,
-    } | null,
-    id: string,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
 export type CreateTicketMutationVariables = {
   input: CreateTicketInput,
   condition?: ModelTicketConditionInput | null,
@@ -280,12 +189,17 @@ export type CreateTicketMutation = {
   createTicket?:  {
     __typename: "Ticket",
     title: string,
-    description: string,
+    content: string,
+    url: string,
+    sourceType: SourceType,
     timestamp: string,
-    severity: Severity,
+    severity?: Severity | null,
     id: string,
     createdAt: string,
     updatedAt: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
   } | null,
 };
 
@@ -298,12 +212,17 @@ export type UpdateTicketMutation = {
   updateTicket?:  {
     __typename: "Ticket",
     title: string,
-    description: string,
+    content: string,
+    url: string,
+    sourceType: SourceType,
     timestamp: string,
-    severity: Severity,
+    severity?: Severity | null,
     id: string,
     createdAt: string,
     updatedAt: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
   } | null,
 };
 
@@ -316,58 +235,17 @@ export type DeleteTicketMutation = {
   deleteTicket?:  {
     __typename: "Ticket",
     title: string,
-    description: string,
-    timestamp: string,
-    severity: Severity,
-    id: string,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type GetIssueQueryVariables = {
-  id: string,
-};
-
-export type GetIssueQuery = {
-  getIssue?:  {
-    __typename: "Issue",
     content: string,
+    url: string,
+    sourceType: SourceType,
     timestamp: string,
-    source?:  {
-      __typename: "Source",
-      type: SourceType,
-      url: string,
-    } | null,
+    severity?: Severity | null,
     id: string,
     createdAt: string,
     updatedAt: string,
-  } | null,
-};
-
-export type ListIssuesQueryVariables = {
-  filter?: ModelIssueFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
-};
-
-export type ListIssuesQuery = {
-  listIssues?:  {
-    __typename: "ModelIssueConnection",
-    items:  Array< {
-      __typename: "Issue",
-      content: string,
-      timestamp: string,
-      source?:  {
-        __typename: "Source",
-        type: SourceType,
-        url: string,
-      } | null,
-      id: string,
-      createdAt: string,
-      updatedAt: string,
-    } | null >,
-    nextToken?: string | null,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
   } | null,
 };
 
@@ -379,12 +257,17 @@ export type GetTicketQuery = {
   getTicket?:  {
     __typename: "Ticket",
     title: string,
-    description: string,
+    content: string,
+    url: string,
+    sourceType: SourceType,
     timestamp: string,
-    severity: Severity,
+    severity?: Severity | null,
     id: string,
     createdAt: string,
     updatedAt: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
   } | null,
 };
 
@@ -400,74 +283,81 @@ export type ListTicketsQuery = {
     items:  Array< {
       __typename: "Ticket",
       title: string,
-      description: string,
+      content: string,
+      url: string,
+      sourceType: SourceType,
       timestamp: string,
-      severity: Severity,
+      severity?: Severity | null,
       id: string,
       createdAt: string,
       updatedAt: string,
+      _version: number,
+      _deleted?: boolean | null,
+      _lastChangedAt: number,
     } | null >,
     nextToken?: string | null,
+    startedAt?: number | null,
   } | null,
 };
 
-export type OnCreateIssueSubscriptionVariables = {
-  filter?: ModelSubscriptionIssueFilterInput | null,
+export type SyncTicketsQueryVariables = {
+  filter?: ModelTicketFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+  lastSync?: number | null,
 };
 
-export type OnCreateIssueSubscription = {
-  onCreateIssue?:  {
-    __typename: "Issue",
-    content: string,
-    timestamp: string,
-    source?:  {
-      __typename: "Source",
-      type: SourceType,
+export type SyncTicketsQuery = {
+  syncTickets?:  {
+    __typename: "ModelTicketConnection",
+    items:  Array< {
+      __typename: "Ticket",
+      title: string,
+      content: string,
       url: string,
-    } | null,
-    id: string,
-    createdAt: string,
-    updatedAt: string,
+      sourceType: SourceType,
+      timestamp: string,
+      severity?: Severity | null,
+      id: string,
+      createdAt: string,
+      updatedAt: string,
+      _version: number,
+      _deleted?: boolean | null,
+      _lastChangedAt: number,
+    } | null >,
+    nextToken?: string | null,
+    startedAt?: number | null,
   } | null,
 };
 
-export type OnUpdateIssueSubscriptionVariables = {
-  filter?: ModelSubscriptionIssueFilterInput | null,
+export type TicketsByUrlQueryVariables = {
+  url: string,
+  sortDirection?: ModelSortDirection | null,
+  filter?: ModelTicketFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
 };
 
-export type OnUpdateIssueSubscription = {
-  onUpdateIssue?:  {
-    __typename: "Issue",
-    content: string,
-    timestamp: string,
-    source?:  {
-      __typename: "Source",
-      type: SourceType,
+export type TicketsByUrlQuery = {
+  ticketsByUrl?:  {
+    __typename: "ModelTicketConnection",
+    items:  Array< {
+      __typename: "Ticket",
+      title: string,
+      content: string,
       url: string,
-    } | null,
-    id: string,
-    createdAt: string,
-    updatedAt: string,
-  } | null,
-};
-
-export type OnDeleteIssueSubscriptionVariables = {
-  filter?: ModelSubscriptionIssueFilterInput | null,
-};
-
-export type OnDeleteIssueSubscription = {
-  onDeleteIssue?:  {
-    __typename: "Issue",
-    content: string,
-    timestamp: string,
-    source?:  {
-      __typename: "Source",
-      type: SourceType,
-      url: string,
-    } | null,
-    id: string,
-    createdAt: string,
-    updatedAt: string,
+      sourceType: SourceType,
+      timestamp: string,
+      severity?: Severity | null,
+      id: string,
+      createdAt: string,
+      updatedAt: string,
+      _version: number,
+      _deleted?: boolean | null,
+      _lastChangedAt: number,
+    } | null >,
+    nextToken?: string | null,
+    startedAt?: number | null,
   } | null,
 };
 
@@ -479,12 +369,17 @@ export type OnCreateTicketSubscription = {
   onCreateTicket?:  {
     __typename: "Ticket",
     title: string,
-    description: string,
+    content: string,
+    url: string,
+    sourceType: SourceType,
     timestamp: string,
-    severity: Severity,
+    severity?: Severity | null,
     id: string,
     createdAt: string,
     updatedAt: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
   } | null,
 };
 
@@ -496,12 +391,17 @@ export type OnUpdateTicketSubscription = {
   onUpdateTicket?:  {
     __typename: "Ticket",
     title: string,
-    description: string,
+    content: string,
+    url: string,
+    sourceType: SourceType,
     timestamp: string,
-    severity: Severity,
+    severity?: Severity | null,
     id: string,
     createdAt: string,
     updatedAt: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
   } | null,
 };
 
@@ -513,11 +413,16 @@ export type OnDeleteTicketSubscription = {
   onDeleteTicket?:  {
     __typename: "Ticket",
     title: string,
-    description: string,
+    content: string,
+    url: string,
+    sourceType: SourceType,
     timestamp: string,
-    severity: Severity,
+    severity?: Severity | null,
     id: string,
     createdAt: string,
     updatedAt: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
   } | null,
 };

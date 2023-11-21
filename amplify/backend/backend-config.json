@@ -1,5 +1,19 @@
 {
   "api": {
+    "SearchForIssues": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "SearchForIssues"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "flash": {
       "dependsOn": [],
       "output": {
@@ -20,6 +34,50 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
+    }
+  },
+  "function": {
+    "SearchForIssues": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ],
+          "category": "api",
+          "resourceName": "flash"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_SearchForIssues_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SearchForIssues"
+        }
+      ]
+    },
+    "AMPLIFY_function_SearchForIssues_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SearchForIssues"
+        }
+      ]
+    },
+    "AMPLIFY_function_SearchForIssues_secretsPathAmplifyAppId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SearchForIssues"
+        }
+      ]
     }
   }
 }

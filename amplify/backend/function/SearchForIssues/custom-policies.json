@@ -1,0 +1,23 @@
+[
+  {
+    "Effect": "Allow",
+    "Action": [
+      "ssm:GetParameter"
+    ],
+    "Resource": [
+      {
+        "Fn::Sub": [
+          "arn:aws:ssm:${region}:${account}:parameter/*",
+          {
+            "region": {
+              "Ref": "AWS::Region"
+            },
+            "account": {
+              "Ref": "AWS::AccountId"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

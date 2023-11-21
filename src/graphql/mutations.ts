@@ -2,66 +2,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createIssue = /* GraphQL */ `
-  mutation CreateIssue(
-    $input: CreateIssueInput!
-    $condition: ModelIssueConditionInput
-  ) {
-    createIssue(input: $input, condition: $condition) {
-      content
-      timestamp
-      source {
-        type
-        url
-        __typename
-      }
-      id
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const updateIssue = /* GraphQL */ `
-  mutation UpdateIssue(
-    $input: UpdateIssueInput!
-    $condition: ModelIssueConditionInput
-  ) {
-    updateIssue(input: $input, condition: $condition) {
-      content
-      timestamp
-      source {
-        type
-        url
-        __typename
-      }
-      id
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const deleteIssue = /* GraphQL */ `
-  mutation DeleteIssue(
-    $input: DeleteIssueInput!
-    $condition: ModelIssueConditionInput
-  ) {
-    deleteIssue(input: $input, condition: $condition) {
-      content
-      timestamp
-      source {
-        type
-        url
-        __typename
-      }
-      id
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
 export const createTicket = /* GraphQL */ `
   mutation CreateTicket(
     $input: CreateTicketInput!
@@ -69,12 +9,17 @@ export const createTicket = /* GraphQL */ `
   ) {
     createTicket(input: $input, condition: $condition) {
       title
-      description
+      content
+      url
+      sourceType
       timestamp
       severity
       id
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -86,12 +31,17 @@ export const updateTicket = /* GraphQL */ `
   ) {
     updateTicket(input: $input, condition: $condition) {
       title
-      description
+      content
+      url
+      sourceType
       timestamp
       severity
       id
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -103,12 +53,17 @@ export const deleteTicket = /* GraphQL */ `
   ) {
     deleteTicket(input: $input, condition: $condition) {
       title
-      description
+      content
+      url
+      sourceType
       timestamp
       severity
       id
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }

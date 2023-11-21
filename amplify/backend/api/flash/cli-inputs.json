@@ -10,7 +10,7 @@
     },
     "conflictResolution": {
       "defaultResolutionStrategy": {
-        "type": "NONE"
+        "type": "OPTIMISTIC_CONCURRENCY"
       }
     },
     "additionalAuthTypes": [

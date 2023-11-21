@@ -12,12 +12,10 @@ const Severity = {
   "HIGH": "HIGH"
 };
 
-const { Issue, Ticket, Source } = initSchema(schema);
+const { Ticket } = initSchema(schema);
 
 export {
-  Issue,
   Ticket,
   SourceType,
-  Severity,
-  Source
+  Severity
 };

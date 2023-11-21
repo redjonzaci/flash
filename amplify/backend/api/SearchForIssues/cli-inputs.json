@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/search-for-issues": {
+      "name": "/search-for-issues",
+      "lambdaFunction": "SearchForIssues",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

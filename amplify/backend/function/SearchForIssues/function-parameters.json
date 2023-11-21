@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "api": {
+      "flash": [
+        "Query",
+        "Mutation"
+      ]
+    }
+  },
+  "lambdaLayers": [],
+  "secretNames": [
+    "REDDIT_USERNAME",
+    "REDDIT_PASSWORD"
+  ],
+  "environmentVariableList": []
+}
