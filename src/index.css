@@ -1,10 +1,295 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/**
+ * Do not edit directly
+ * Generated on Wed, 12 Oct 2022 22:14:28 GMT
+ */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+:root,
+.tds-colorscheme--light,
+.tds-scrim--white {
+  --tds-animation-bezier-base: cubic-bezier(0.5, 0, 0, 0.75);
+  --tds-ui-opacity-100: 1;
+  --tds-ui-opacity-70: 0.7;
+  --tds-ui-opacity-50: 0.5;
+  --tds-ui-opacity-30: 0.3;
+  --tds-ui-opacity-0: 0;
+  --tds-ui-box-shadow-off: 0 0 0 0 rgba(0, 0, 0, 0);
+  --tds-component-pill-padding-inline: 20px;
+  --tds-size-half: 4px;
+  /* Used in denser UIs */
+  --tds-size-base: 8px;
+  /* TDS generally leverages a base-8 system with this value forming the foundation */
+  --tds-size-9x: 72px;
+  /* Base x 9 */
+  --tds-size-8x: 64px;
+  /* Base x 8 */
+  --tds-size-7x: 56px;
+  /* Base x 7 */
+  --tds-size-6x: 48px;
+  /* Base x 6 */
+  --tds-size-5x: 40px;
+  /* Base x 5 */
+  --tds-size-4x: 32px;
+  /* Base x 4 */
+  --tds-size-3x: 24px;
+  /* Base x 3 */
+  --tds-size-2x: 16px;
+  /* Base x 2 */
+  --tds-size-13x: 104px;
+  /* Base x 13 */
+  --tds-size-12x: 96px;
+  /* Base x 12 */
+  --tds-size-11x: 88px;
+  /* Base x 11 */
+  --tds-size-10x: 80px;
+  /* the large size of the font */
+  --tds-font-weight-xlight: 200;
+  --tds-font-weight-medium: 500;
+  --tds-font-weight-light: 300;
+  --tds-font-weight-book: 400;
+  --tds-font-weight-bold: 700;
+  --tds-font-size-75: 34px;
+  --tds-font-size-70: 28px;
+  --tds-font-size-55: 23px;
+  --tds-font-size-50: 20px;
+  --tds-font-size-40: 17px;
+  --tds-font-size-30: 14px;
+  --tds-font-size-20: 12px;
+  --tds-font-size-10: 10px;
+  --tds-font-line-height-unitless: 1.414;
+  --tds-font-line-height-75: 45px;
+  --tds-font-line-height-70: 36px;
+  --tds-font-line-height-60: 28px;
+  --tds-font-line-height-40: 23px;
+  --tds-font-line-height-30: 21px;
+  --tds-font-line-height-20: 20px;
+  --tds-font-line-height-10: 18px;
+  --tds-font-family-thai: 'Noto Sans Thai';
+  --tds-font-family-monospace: 'Fira Code', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  --tds-font-family-latin-alt: 'Universal Sans';
+  --tds-font-family-latin: 'Gotham SSm';
+  --tds-font-family-korean: 'FB New Gothic';
+  --tds-font-family-japanese: 'AXIS Font Japanese W55', 'Hiragino Sans';
+  --tds-font-family-hebrew: 'Noto Sans Hebrew';
+  --tds-font-family-chinese-traditional: 'PingFang TC', 'Microsoft YaHei';
+  --tds-font-family-chinese-simplified: 'PingFang SC', 'Microsoft YaHei';
+  --tds-font-family-chinese-hk: 'PingFang HK', 'Microsoft YaHei';
+  --tds-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --tds-font-family-arabic: 'Noto Sans Arabic';
+  --tds-color-yellow: #fbb01b;
+  --tds-color-white: #ffffff;
+  --tds-color-red-20: #ed4e3b;
+  --tds-color-red-10: #b74134;
+  --tds-color-grey-70: #f4f4f4;
+  --tds-color-grey-65: #eeeeee;
+  --tds-color-grey-60: #e2e3e3;
+  --tds-color-grey-50: #d0d1d2;
+  --tds-color-grey-45: #bbbbbb;
+  --tds-color-grey-40: #a2a3a5;
+  --tds-color-grey-35: #8e8e8e;
+  --tds-color-grey-30: #5c5e62;
+  --tds-color-grey-25: #444444;
+  --tds-color-grey-20: #393c41;
+  --tds-color-grey-15: #222222;
+  --tds-color-grey-10: #171a20;
+  --tds-color-green: #12bb00;
+  --tds-color-blue-40: #3368ff;
+  /* Used for accessible text on black */
+  --tds-color-blue-30: #3e6ae1;
+  /* Base blue. */
+  --tds-color-blue-20: #3457b1;
+  /* Used for accessible text on light and highlight across all scrims */
+  --tds-color-black: #000000;
+  --tds-border-width-small: 1px;
+  --tds-border-width-medium: 2px;
+  --tds-border-width-large: 3px;
+  --tds-border-width-hairline: 0.5px;
+  --tds-border-style: solid;
+  --tds-border-radius-outline-only: 0.001px;
+  --tds-border-radius-form-item: 20px;
+  --tds-border-radius-circle: 100%;
+  --tds-ui-box-shadow-small: 0 var(--tds-size-half) var(--tds-size-base) 0 rgba(0, 0, 0, 0.08);
+  --tds-ui-box-shadow-medium: 0 var(--tds-size-base) var(--tds-size-2x) 0 rgba(0, 0, 0, 0.12);
+  --tds-ui-box-shadow-large-reverse: 0 -8px var(--tds-size-2x) 0 rgba(0, 0, 0, 0.16);
+  --tds-ui-box-shadow-large: 0 var(--tds-size-base) var(--tds-size-2x) 0 rgba(0, 0, 0, 0.16);
+  --tds-component-pill-padding-block: var(--tds-size-2x);
+  --tds-component-pill-height: var(--tds-size-5x);
+  --tds-component-card-padding: var(--tds-size-2x);
+  --tds-size-1x: var(--tds-size-base);
+  /* Identical to the base value */
+  --tds-font-size-80: var(--tds-size-5x);
+  --tds-font-size-60: var(--tds-size-3x);
+  --tds-font-line-height-80: var(--tds-size-6x);
+  --tds-font-line-height-50: var(--tds-size-3x);
+  --tds-font-family-combined: var(--tds-font-family-latin), var(--tds-font-family-base);
+  --tds-border-radius-pill: var(--tds-size-4x);
+  --tds-border-radius-card: var(--tds-size-base);
+  --tds-border-radius-base: var(--tds-size-half);
+}
+
+/* ! Deprecation Notice: props.css and all current tokens set to :root will be deprecated in July 2022.
+
+    Please ensure all your custom props reference the renamed tokens in dist/tokens/css/tokens.css before then.
+*/
+
+/*
+ * TDS Custom Properties
+ * To add a property, declare the css variable below and run a build.
+ * This will provide the variable for consumers of both css and js
+ *
+ * Format:
+ * --tds-{property-name}: {base-value};
+ * --tds-{property-name}--{modifier}: {value};
+ */
+:root,
+.tds-component-preview {
+  /* Primitive/Abstract Props */
+  --tds-bezier: cubic-bezier(0.5, 0, 0, 0.75);
+
+  /* Sizes */
+  --tds-size: 8px;
+  --tds-size--10x: 80px;
+  --tds-size--11x: 88px;
+  --tds-size--12x: 96px;
+  --tds-size--13x: 104px;
+  --tds-size--1x: 8px;
+  --tds-size--2x: 16px;
+  --tds-size--3x: 24px;
+  --tds-size--4x: 32px;
+  --tds-size--5x: 40px;
+  --tds-size--6x: 48px;
+  --tds-size--7x: 56px;
+  --tds-size--8x: 64px;
+  --tds-size--9x: 72px;
+  --tds-size--half: 4px;
+
+  /* Colors */
+  --tds-color--black: #000;
+  /* hsl(0, 0%, 0%); */
+  --tds-color--blue10: #2e4994;
+  /* hsl(224, 53%, 38%); */
+  --tds-color--blue20: #3457b1;
+  /* hsl(223, 55%, 45%); */
+  --tds-color--blue30: #3e6ae1;
+  /* hsl(224, 73%, 56%); */
+  --tds-color--green: #12bb00;
+  /* hsl(114, 100%, 37%); */
+  --tds-color--grey10: #171a20;
+  /* hsl(220, 16%, 11%); */
+  --tds-color--grey15: #222;
+  /* hsl(0, 0%, 13%); */
+  --tds-color--grey20: #393c41;
+  /* hsl(218, 7%, 24%); */
+  --tds-color--grey25: #444;
+  /* hsl(0, 0%, 27%); */
+  --tds-color--grey30: #5c5e62;
+  /* hsl(220, 3%, 37%); */
+  --tds-color--grey35: #8e8e8e;
+  /* hsl(0, 0%, 56%); */
+  --tds-color--grey40: #a2a3a5;
+  /* hsl(220, 2%, 64%); */
+  --tds-color--grey45: #bbb;
+  /* hsl(0, 0%, 73%); */
+  --tds-color--grey50: #d0d1d2;
+  /* hsl(210, 2%, 82%); */
+  --tds-color--grey60: #e2e3e3;
+  /* hsl(180, 2%, 89%); */
+  --tds-color--grey65: #eee;
+  /* hsl(0, 0%, 93%); */
+  --tds-color--grey70: #f4f4f4;
+  /* hsl(0, 0%, 96%); */
+  --tds-color--red10: #b74134;
+  /* hsl(6, 56%, 46%); */
+  --tds-color--red20: #ed4e3b;
+  /* hsl(6, 83%, 58%); */
+  --tds-color--white: #fff;
+  /* hsl(0, 0%, 100%); */
+  --tds-color--yellow: #fbb01b;
+  /* hsl(40, 97%, 55%); */
+
+  /* font tokens */
+  --tds-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --tds-font-family--arabic: 'Noto Sans Arabic';
+  --tds-font-family--chinese-hk: 'PingFang HK', 'Microsoft YaHei';
+  --tds-font-family--chinese-simplified: 'PingFang SC', 'Microsoft YaHei';
+  --tds-font-family--chinese-traditional: 'PingFang TC', 'Microsoft YaHei';
+  --tds-font-family--combined: 'Gotham SSm', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --tds-font-family--hebrew: 'Noto Sans Hebrew';
+  --tds-font-family--japanese: 'AXIS Font Japanese W55', 'Hiragino Sans';
+  --tds-font-family--korean: 'FB New Gothic';
+  --tds-font-family--latin: 'Gotham SSm';
+  --tds-font-family--monospace: 'Fira Code', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  --tds-font-family--thai: 'Noto Sans Thai';
+  --tds-font-weight--bold: 700;
+  --tds-font-weight--book: 400;
+  --tds-font-weight--light: 300;
+  --tds-font-weight--medium: 500;
+  --tds-font-weight--xlight: 200;
+
+  /* TODO: Refactor these to `blur(16px)` etc */
+  --tds-blur--button: 16px;
+  --tds-blur--large: 8px;
+  --tds-blur--small: 4px;
+
+  /* Base Props */
+  --tds-border-radius: 4px;
+  --tds-border-radius--card: 4px;
+  --tds-border-radius--card--dense: 4px;
+  --tds-border-radius--circle: 100%;
+  --tds-border-radius--pill: 4px;
+
+  /* essentially 0, but combined with outline-offset 2px,
+    * this provides a 4px outline radius on focus */
+  --tds-border-radius--outline-only: 0.001px;
+  --tds-border-style: solid;
+  --tds-border-width--hairline: 1px;
+  --tds-border-width--large: 3px;
+  --tds-border-width--medium: 2px;
+  --tds-border-width--small: 1px;
+  --tds-box-shadow--large: 0 8px 16px 0 rgba(0, 0, 0, 0.16);
+  --tds-box-shadow--large-reverse: 0 -8px 16px 0 rgba(0, 0, 0, 0.16);
+  --tds-box-shadow--medium: 0 8px 16px 0 rgba(0, 0, 0, 0.12);
+  --tds-box-shadow--off: 0 0 0 0 rgba(0, 0, 0, 0);
+  --tds-box-shadow--small: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+  --tds-font-size--10: 10px;
+  --tds-font-size--20: 12px;
+  --tds-font-size--30: 14px;
+  --tds-font-size--40: 17px;
+  --tds-font-size--50: 20px;
+  --tds-font-size--55: 23px;
+  --tds-font-size--60: 24px;
+  --tds-font-size--70: 28px;
+  --tds-font-size--75: 34px;
+  --tds-font-size--80: 40px;
+  --tds-height--choice: 24px;
+  --tds-height--pill: 40px;
+  --tds-line-height--10: 18px;
+  --tds-line-height--20: 20px;
+  --tds-line-height--30: 20px;
+  --tds-line-height--40: 24px;
+  --tds-line-height--50: 24px;
+  --tds-line-height--60: 28px;
+  --tds-line-height--70: 36px;
+  --tds-line-height--75: 44px;
+  --tds-line-height--80: 48px;
+  --tds-line-height--unitless: 1.414;
+  --tds-opacity--100: 1;
+  --tds-opacity--30: 0.3;
+  --tds-opacity--50: 0.5;
+  --tds-opacity--70: 0.7;
+  --tds-opacity--transparent: 0;
+  --tds-padding--card: 24px;
+  --tds-padding--card--dense: 16px;
+}
+
+@media (min-resolution: 2),
+(min-resolution: 192dpi) {
+
+  :root,
+  .tds-component-preview {
+    --tds-border-width--hairline: 0.5px;
+  }
 }
