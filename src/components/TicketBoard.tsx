@@ -22,6 +22,46 @@ export default function TicketBoard() {
     return () => subscription.unsubscribe();
   }, []);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  function handleScroll() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    const threshold = 5;
+
+    if (scrollTop + windowHeight >= documentHeight - threshold) {
+      setCurrentPage((prevPage) => prevPage + 1);
+    }
+  }
+
+  useEffect(() => {
+    if (currentPage === 1 || !hasMore) return;
+    loadMoreData(currentPage);
+  }, [currentPage]);
+
+  async function loadMoreData(currentPage: number) {
+    const newTickets = await DataStore.query(Ticket, null, {
+      // Load more data as the page number increases
+      limit: 20 * currentPage,
+      sort: (ticket) => ticket.timestamp(SortDirection.DESCENDING),
+      page: currentPage,
+    });
+
+    if (newTickets.length === 0) {
+      setHasMore(false);
+    } else {
+      setTickets([...tickets, ...newTickets]);
+    }
+  }
+
   return (
     <table className="tds-table tds-o-table-cells-centered tds-table--thead_border tds-table--padded_cells tds-table--hoverable tds-table--row_border tds-o-legacy-careers">
       <thead className="tds-table-head">
