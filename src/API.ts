@@ -9,6 +9,7 @@ export type CreateTicketInput = {
   sourceType: SourceType,
   timestamp: string,
   severity?: Severity | null,
+  category?: Category | null,
   id?: string | null,
   _version?: number | null,
 };
@@ -25,6 +26,18 @@ export enum Severity {
 }
 
 
+export enum Category {
+  MODEL_S = "MODEL_S",
+  MODEL_3 = "MODEL_3",
+  MODEL_X = "MODEL_X",
+  MODEL_Y = "MODEL_Y",
+  STORE = "STORE",
+  SERVICE_CENTER = "SERVICE_CENTER",
+  APP = "APP",
+  WEBSITE = "WEBSITE",
+}
+
+
 export type ModelTicketConditionInput = {
   title?: ModelStringInput | null,
   content?: ModelStringInput | null,
@@ -32,6 +45,7 @@ export type ModelTicketConditionInput = {
   sourceType?: ModelSourceTypeInput | null,
   timestamp?: ModelStringInput | null,
   severity?: ModelSeverityInput | null,
+  category?: ModelCategoryInput | null,
   and?: Array< ModelTicketConditionInput | null > | null,
   or?: Array< ModelTicketConditionInput | null > | null,
   not?: ModelTicketConditionInput | null,
@@ -88,6 +102,11 @@ export type ModelSeverityInput = {
   ne?: Severity | null,
 };
 
+export type ModelCategoryInput = {
+  eq?: Category | null,
+  ne?: Category | null,
+};
+
 export type ModelBooleanInput = {
   ne?: boolean | null,
   eq?: boolean | null,
@@ -103,6 +122,7 @@ export type Ticket = {
   sourceType: SourceType,
   timestamp: string,
   severity?: Severity | null,
+  category?: Category | null,
   id: string,
   createdAt: string,
   updatedAt: string,
@@ -118,6 +138,7 @@ export type UpdateTicketInput = {
   sourceType?: SourceType | null,
   timestamp?: string | null,
   severity?: Severity | null,
+  category?: Category | null,
   id: string,
   _version?: number | null,
 };
@@ -134,6 +155,7 @@ export type ModelTicketFilterInput = {
   sourceType?: ModelSourceTypeInput | null,
   timestamp?: ModelStringInput | null,
   severity?: ModelSeverityInput | null,
+  category?: ModelCategoryInput | null,
   and?: Array< ModelTicketFilterInput | null > | null,
   or?: Array< ModelTicketFilterInput | null > | null,
   not?: ModelTicketFilterInput | null,
@@ -160,6 +182,7 @@ export type ModelSubscriptionTicketFilterInput = {
   sourceType?: ModelSubscriptionStringInput | null,
   timestamp?: ModelSubscriptionStringInput | null,
   severity?: ModelSubscriptionStringInput | null,
+  category?: ModelSubscriptionStringInput | null,
   and?: Array< ModelSubscriptionTicketFilterInput | null > | null,
   or?: Array< ModelSubscriptionTicketFilterInput | null > | null,
   _deleted?: ModelBooleanInput | null,
@@ -194,6 +217,7 @@ export type CreateTicketMutation = {
     sourceType: SourceType,
     timestamp: string,
     severity?: Severity | null,
+    category?: Category | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -217,6 +241,7 @@ export type UpdateTicketMutation = {
     sourceType: SourceType,
     timestamp: string,
     severity?: Severity | null,
+    category?: Category | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -240,6 +265,7 @@ export type DeleteTicketMutation = {
     sourceType: SourceType,
     timestamp: string,
     severity?: Severity | null,
+    category?: Category | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -262,6 +288,7 @@ export type GetTicketQuery = {
     sourceType: SourceType,
     timestamp: string,
     severity?: Severity | null,
+    category?: Category | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -288,6 +315,7 @@ export type ListTicketsQuery = {
       sourceType: SourceType,
       timestamp: string,
       severity?: Severity | null,
+      category?: Category | null,
       id: string,
       createdAt: string,
       updatedAt: string,
@@ -318,6 +346,7 @@ export type SyncTicketsQuery = {
       sourceType: SourceType,
       timestamp: string,
       severity?: Severity | null,
+      category?: Category | null,
       id: string,
       createdAt: string,
       updatedAt: string,
@@ -349,6 +378,7 @@ export type TicketsByUrlQuery = {
       sourceType: SourceType,
       timestamp: string,
       severity?: Severity | null,
+      category?: Category | null,
       id: string,
       createdAt: string,
       updatedAt: string,
@@ -374,6 +404,7 @@ export type OnCreateTicketSubscription = {
     sourceType: SourceType,
     timestamp: string,
     severity?: Severity | null,
+    category?: Category | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -396,6 +427,7 @@ export type OnUpdateTicketSubscription = {
     sourceType: SourceType,
     timestamp: string,
     severity?: Severity | null,
+    category?: Category | null,
     id: string,
     createdAt: string,
     updatedAt: string,
@@ -418,6 +450,7 @@ export type OnDeleteTicketSubscription = {
     sourceType: SourceType,
     timestamp: string,
     severity?: Severity | null,
+    category?: Category | null,
     id: string,
     createdAt: string,
     updatedAt: string,

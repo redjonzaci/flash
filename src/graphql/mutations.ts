@@ -14,6 +14,7 @@ export const createTicket = /* GraphQL */ `
       sourceType
       timestamp
       severity
+      category
       id
       createdAt
       updatedAt
@@ -36,6 +37,7 @@ export const updateTicket = /* GraphQL */ `
       sourceType
       timestamp
       severity
+      category
       id
       createdAt
       updatedAt
@@ -58,6 +60,7 @@ export const deleteTicket = /* GraphQL */ `
       sourceType
       timestamp
       severity
+      category
       id
       createdAt
       updatedAt

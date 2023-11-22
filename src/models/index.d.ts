@@ -12,6 +12,17 @@ export enum Severity {
   HIGH = "HIGH"
 }
 
+export enum Category {
+  MODEL_S = "MODEL_S",
+  MODEL_3 = "MODEL_3",
+  MODEL_X = "MODEL_X",
+  MODEL_Y = "MODEL_Y",
+  STORE = "STORE",
+  SERVICE_CENTER = "SERVICE_CENTER",
+  APP = "APP",
+  WEBSITE = "WEBSITE"
+}
+
 
 
 type EagerTicket = {
@@ -26,6 +37,7 @@ type EagerTicket = {
   readonly sourceType: SourceType | keyof typeof SourceType;
   readonly timestamp: string;
   readonly severity?: Severity | keyof typeof Severity | null;
+  readonly category?: Category | keyof typeof Category | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -42,6 +54,7 @@ type LazyTicket = {
   readonly sourceType: SourceType | keyof typeof SourceType;
   readonly timestamp: string;
   readonly severity?: Severity | keyof typeof Severity | null;
+  readonly category?: Category | keyof typeof Category | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

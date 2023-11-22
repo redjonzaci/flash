@@ -12,10 +12,22 @@ const Severity = {
   "HIGH": "HIGH"
 };
 
+const Category = {
+  "MODEL_S": "MODEL_S",
+  "MODEL_3": "MODEL_3",
+  "MODEL_X": "MODEL_X",
+  "MODEL_Y": "MODEL_Y",
+  "STORE": "STORE",
+  "SERVICE_CENTER": "SERVICE_CENTER",
+  "APP": "APP",
+  "WEBSITE": "WEBSITE"
+};
+
 const { Ticket } = initSchema(schema);
 
 export {
   Ticket,
   SourceType,
-  Severity
+  Severity,
+  Category
 };

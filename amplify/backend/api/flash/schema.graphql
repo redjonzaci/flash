@@ -5,6 +5,7 @@ type Ticket @model @auth(rules: [{ allow: public }]) {
   sourceType: SourceType!
   timestamp: AWSDateTime!
   severity: Severity
+  category: Category
 }
 
 enum SourceType {
@@ -15,4 +16,15 @@ enum Severity {
   LOW
   MEDIUM
   HIGH
+}
+
+enum Category {
+  MODEL_S
+  MODEL_3
+  MODEL_X
+  MODEL_Y
+  STORE
+  SERVICE_CENTER
+  APP
+  WEBSITE
 }

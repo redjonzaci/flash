@@ -11,6 +11,7 @@ export const getTicket = /* GraphQL */ `
       sourceType
       timestamp
       severity
+      category
       id
       createdAt
       updatedAt
@@ -35,6 +36,7 @@ export const listTickets = /* GraphQL */ `
         sourceType
         timestamp
         severity
+        category
         id
         createdAt
         updatedAt
@@ -69,6 +71,7 @@ export const syncTickets = /* GraphQL */ `
         sourceType
         timestamp
         severity
+        category
         id
         createdAt
         updatedAt
@@ -105,6 +108,7 @@ export const ticketsByUrl = /* GraphQL */ `
         sourceType
         timestamp
         severity
+        category
         id
         createdAt
         updatedAt

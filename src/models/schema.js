@@ -56,6 +56,15 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "category": {
+                    "name": "category",
+                    "isArray": false,
+                    "type": {
+                        "enum": "Category"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -123,9 +132,22 @@ export const schema = {
                 "MEDIUM",
                 "HIGH"
             ]
+        },
+        "Category": {
+            "name": "Category",
+            "values": [
+                "MODEL_S",
+                "MODEL_3",
+                "MODEL_X",
+                "MODEL_Y",
+                "STORE",
+                "SERVICE_CENTER",
+                "APP",
+                "WEBSITE"
+            ]
         }
     },
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "7ad88807f9a21e61182ae52c0dcb2b2a"
+    "version": "7cad739f393513f0c0f48f621e8695c9"
 };
