@@ -35,6 +35,7 @@ export enum Category {
   SERVICE_CENTER = "SERVICE_CENTER",
   APP = "APP",
   WEBSITE = "WEBSITE",
+  SUPERCHARGER = "SUPERCHARGER",
 }
 
 

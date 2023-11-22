@@ -143,7 +143,9 @@ export const schema = {
                 "STORE",
                 "SERVICE_CENTER",
                 "APP",
-                "WEBSITE"
+                "WEBSITE",
+                "SUPERCHARGER",
+                "NOT_AN_ISSUE"
             ]
         }
     },

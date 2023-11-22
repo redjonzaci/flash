@@ -8,15 +8,20 @@ export default function TicketBoard() {
   const [tickets, setTickets] = useState<Ticket[]>([]);
 
   useEffect(() => {
-    DataStore.query(Ticket, null, {
+    DataStore.query(Ticket, (t) => t.category.ne(Category.NOT_AN_ISSUE), {
       limit: 20,
       sort: (ticket) => ticket.timestamp(SortDirection.DESCENDING),
-    }).then(setTickets);
+    }).then((tickets) => {
+      setTickets(tickets);
+    });
   }, []);
 
   useEffect(() => {
     const subscription = DataStore.observe(Ticket).subscribe(() => {
-      DataStore.query(Ticket).then(setTickets);
+      DataStore.query(Ticket, (t) => t.category.eq(Category.NOT_AN_ISSUE), {
+        limit: 20,
+        sort: (ticket) => ticket.timestamp(SortDirection.DESCENDING),
+      }).then(setTickets);
     });
 
     return () => subscription.unsubscribe();
@@ -48,12 +53,16 @@ export default function TicketBoard() {
   }, [currentPage]);
 
   async function loadMoreData(currentPage: number) {
-    const newTickets = await DataStore.query(Ticket, null, {
-      // Load more data as the page number increases
-      limit: 20 * currentPage,
-      sort: (ticket) => ticket.timestamp(SortDirection.DESCENDING),
-      page: currentPage,
-    });
+    const newTickets = await DataStore.query(
+      Ticket,
+      (t) => t.category.ne(Category.NOT_AN_ISSUE),
+      {
+        // Load more data as the page number increases
+        limit: 20 * currentPage,
+        sort: (ticket) => ticket.timestamp(SortDirection.DESCENDING),
+        page: currentPage,
+      }
+    );
 
     if (newTickets.length === 0) {
       setHasMore(false);

@@ -27,4 +27,6 @@ enum Category {
   SERVICE_CENTER
   APP
   WEBSITE
+  SUPERCHARGER
+  NOT_AN_ISSUE
 }

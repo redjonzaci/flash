@@ -20,7 +20,9 @@ const Category = {
   "STORE": "STORE",
   "SERVICE_CENTER": "SERVICE_CENTER",
   "APP": "APP",
-  "WEBSITE": "WEBSITE"
+  "WEBSITE": "WEBSITE",
+  "SUPERCHARGER": "SUPERCHARGER",
+  "NOT_AN_ISSUE": "NOT_AN_ISSUE"
 };
 
 const { Ticket } = initSchema(schema);
