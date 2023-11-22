@@ -70,6 +70,9 @@ export default function TicketBoard() {
             Title
           </th>
           <th role="columnheader" scope="col">
+            Category
+          </th>
+          <th role="columnheader" scope="col">
             Content
           </th>
           <th role="columnheader" scope="col">
@@ -88,6 +91,7 @@ export default function TicketBoard() {
                 )
               </a>
             </td>
+            <td>{ticket.category || ''}</td>
             <td>{ticket.content.slice(0, 200)}...</td>
             <td>{new Date(ticket.timestamp).toLocaleString()}</td>
           </tr>
