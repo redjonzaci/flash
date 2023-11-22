@@ -1,0 +1,347 @@
+:root,
+.tds-component-preview {
+  --tds-btn--font-size: var(--tds-font-size--30);
+  --tds-theme-background-container-alt-highlight: rgba(0, 0, 0, 0.075);
+  /* used for hover states only, not available in ui kit */
+  --tds-theme-background-container-alt: rgba(0, 0, 0, 0.05);
+  --tds-theme-secondary-warning: var(--tds-color-yellow);
+  --tds-theme-secondary-positive: var(--tds-color-green);
+  --tds-theme-secondary-negative: var(--tds-color-red-10);
+  --tds-theme-primary-highlight: var(--tds-color-blue-20);
+  /* used for hover states only, not available in ui kit */
+  --tds-theme-primary: var(--tds-color-blue-30);
+  --tds-theme-foreground-primary: var(--tds-color-blue-20);
+  --tds-theme-foreground-on-primary: var(--tds-color-white);
+  --tds-theme-foreground-low-contrast: var(--tds-color-grey-30);
+  --tds-theme-foreground-inverse: var(--tds-color-black);
+  /* used for hover states only, not available in ui kit */
+  --tds-theme-foreground-high-contrast: var(--tds-color-grey-10);
+  --tds-theme-foreground: var(--tds-color-grey-20);
+  --tds-theme-border-low-contrast: var(--tds-color-grey-60);
+  --tds-theme-border: var(--tds-color-grey-50);
+  --tds-theme-background-dialog: var(--tds-color-white);
+  --tds-theme-background: var(--tds-color-grey-70);
+  --tds-theme-background-container-highlight: var(--tds-color-grey-65);
+  /* used for hover states only, not available in ui kit */
+  --tds-theme-background-container: var(--tds-color-white);
+}
+
+/* Colorschemes
+   ========================================================================== */
+
+/* Preserve v6- Contextual Tokens to allow folks to continue to use the deprecated syntax */
+
+/* TODO: Update internal token usage in v7 (see color-migration-notes.md) */
+
+/* TODO: Remove these in TDS v8 */
+
+/* Scrim: (in a theater) a piece of gauze cloth that appears opaque
+ until lit from behind, used as a screen or backdrop.
+
+ In TDS Scrims represent a specific background color applied to a section,
+ similar to a sub-theme.
+ --------------------------------------------------------------- */
+[class*='tds-scrim--'] {
+  /* Deliberately leave the default background undefined, so that components can specify a fallback */
+  background-color: var(--tds-theme-background);
+}
+
+/* Light (Default) */
+:root,
+.tds-colorscheme--light,
+.tds-scrim--white,
+.tds-scrim--light {
+  /* Old color tokens kept for backwards-compatibility. These will be removed in a future version */
+  --tds-color--error: var(--tds-color-red-10);
+  --tds-color--hairline: var(--tds-color-grey-50);
+  --tds-color--inverse: var(--tds-color-white);
+  --tds-color--primary: var(--tds-color-blue-30);
+  --tds-color--primary-highlight: var(--tds-color-blue-20);
+  --tds-color--rgb-shade: 0, 0, 0;
+  --tds-color--rgb-shade--inverse: 255, 255, 255;
+  --tds-color--scrim--semitransparent: rgba(255, 255, 255, 0.7);
+  --tds-color--secondary: var(--tds-color-grey-10);
+  --tds-color--secondary-accent: var(--tds-color-grey-50);
+  --tds-color--secondary-highlight: var(--tds-color-black);
+  --tds-color--tertiary: var(--tds-color-grey-70);
+  --tds-color--tertiary-highlight: var(--tds-color-grey-65);
+  --tds-caption--color: var(--tds-color-grey-30);
+  --tds-dialog--background-color: var(--tds-color-white);
+  --tds-form-label--color: var(--tds-color-grey-30);
+  --tds-heading--color: var(--tds-color-grey-10);
+  --tds-pill--blur-color: rgba(0, 0, 0, 0.048);
+  --tds-pill--blur-color-highlight: rgba(0, 0, 0, 0.072);
+  --tds-text--color: var(--tds-color-grey-20);
+  --tds-text--color--light: var(--tds-color-grey-30);
+  --tds-text--color--placeholder: var(--tds-color-grey-40);
+  --tds-text--color--primary: var(--tds-color-blue-30);
+  --tds-toggle--background-color: rgba(150, 150, 150, 0.1);
+  --tds-toggle--fill-color: var(--tds-color-white);
+  --tds-text--contrast-high: var(--tds-color-grey-10);
+  --tds-text--contrast-low: var(--tds-color-grey-30);
+  --tds-text--contrast-medium: var(--tds-color-grey-20);
+  --tds-code-bg-color: var(--tds-color-grey-70);
+  --tds-code-border-color: var(--tds-color-grey-60);
+  --tds-code-color: var(--tds-text--color);
+  --tds-color--focus: var(--tds-color-grey-35);
+  --tds-outline--focus: 2px solid var(--tds-color--focus);
+
+  /* css-encoded icons for special cases */
+  --tds-background-image--check: url("data:image/svg+xml,<svg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path fill='hsl(218, 7%, 24%)' d='M6.592 11.58a.748.748 0 0 1-.53-.22L3.22 8.517a.75.75 0 1 1 1.06-1.061l2.312 2.312L11.72 4.64a.75.75 0 1 1 1.06 1.06l-5.658 5.66a.748.748 0 0 1-.53.22z' /></svg>");
+  --tds-background-image--minus: url("data:image/svg+xml,<svg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path fill='hsl(218, 7%, 24%)' d='M13 8a.75.75 0 0 1-.75.75h-8.5a.75.75 0 0 1 0-1.5h8.5A.75.75 0 0 1 13 8z' /></svg>");
+
+  /* Default color should be set by the semantic token */
+  color: var(--tds-theme-foreground);
+}
+
+.tds-scrim--white {
+  --tds-dialog--background-color: var(--tds-color-white);
+  --tds-scrim--background: var(--tds-color-white);
+}
+
+.tds-scrim--light {
+  --tds-color--tertiary: var(--tds-color-white);
+  --tds-scrim--background: var(--tds-color-grey-70);
+  --tds-text--color--primary: #3865e0;
+  --tds-code-bg-color: var(--tds-color-grey-60);
+  --tds-code-border-color: var(--tds-color-grey-50);
+  --tds-code-color: var(--tds-text--color);
+  --tds-color--focus: var(--tds-color-grey-30);
+  --tds-outline--focus: 2px solid var(--tds-color--focus);
+}
+
+/* Light Scrim override for dialogs and elevated elements that have white backgrounds
+ * Note that this can't be placed on the component itself, as some of the components rely on
+ * --tds-color--tertiary for their own background
+*/
+.tds-scrim--light .tds-tooltip>*,
+.tds-scrim--light .tds-modal>*,
+.tds-scrim--light .tds-card>* {
+  --tds-code-bg-color: var(--tds-color-grey-70);
+  --tds-code-border-color: var(--tds-color-grey-60);
+  --tds-color--tertiary: var(--tds-color-grey-70);
+}
+
+/* Dark */
+.tds-colorscheme--dark,
+.tds-scrim--black {
+  /* Old color tokens kept for backwards-compatibility. These will be removed in a future version */
+  --tds-box-shadow--large: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
+  --tds-box-shadow--medium: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+  --tds-box-shadow--small: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  --tds-color--error: var(--tds-color--red20);
+  --tds-color--hairline: var(--tds-color-grey-35);
+  --tds-color--inverse: var(--tds-color-black);
+  --tds-color--rgb-shade: 255, 255, 255;
+  --tds-color--rgb-shade--inverse: 0, 0, 0;
+  --tds-color--scrim--semitransparent: rgba(0, 0, 0, 0.7);
+  --tds-color--secondary: var(--tds-color-grey-70);
+  --tds-color--secondary-accent: var(--tds-color-grey-35);
+  --tds-color--secondary-highlight: var(--tds-color-white);
+  --tds-color--tertiary: var(--tds-color-grey-15);
+  --tds-color--tertiary-highlight: var(--tds-color-grey-20);
+  --tds-caption--color: var(--tds-color-grey-50);
+  --tds-dialog--background-color: var(--tds-color-grey-15);
+  --tds-form-label--color: var(--tds-color-grey-50);
+  --tds-heading--color: var(--tds-color-white);
+  --tds-pill--blur-color: rgba(255, 255, 255, 0.13);
+  --tds-pill--blur-color-highlight: rgba(255, 255, 255, 0.24);
+  --tds-text--color: var(--tds-color-grey-60);
+  --tds-text--color--light: var(--tds-color-grey-50);
+  --tds-text--color--primary: #3368ff;
+  --tds-toggle--background-color: rgba(255, 255, 255, 0.2);
+  --tds-toggle--fill-color: var(--tds-color-grey-30);
+  --tds-text--contrast-high: var(--tds-color-white);
+  --tds-text--contrast-low: var(--tds-color-grey-40);
+  --tds-text--contrast-medium: var(--tds-color-grey-60);
+  --tds-code-bg-color: var(--tds-color-grey-10);
+  --tds-code-border-color: var(--tds-color-grey-15);
+  --tds-code-color: var(--tds-text--color);
+
+  /* css-encoded icons for special cases */
+  --tds-background-image--check: url("data:image/svg+xml,<svg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path fill='hsl(180, 2%, 89%)' d='M6.592 11.58a.748.748 0 0 1-.53-.22L3.22 8.517a.75.75 0 1 1 1.06-1.061l2.312 2.312L11.72 4.64a.75.75 0 1 1 1.06 1.06l-5.658 5.66a.748.748 0 0 1-.53.22z' /></svg>");
+  --tds-background-image--minus: url("data:image/svg+xml,<svg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path fill='hsl(180, 2%, 89%)' d='M13 8a.75.75 0 0 1-.75.75h-8.5a.75.75 0 0 1 0-1.5h8.5A.75.75 0 0 1 13 8z' /></svg>");
+
+  /* Default color should be set by the semantic token */
+  color: var(--tds-theme-foreground);
+}
+
+.tds-scrim--black {
+  --tds-scrim--background: var(--tds-color-black);
+}
+
+/* Dark Scrim override for some of the components as they rely on
+ * inheriting the background color from a distant parent element
+ * which, alone, doesn't vibe well with Firefox and leads to a
+ * transparent background with light text that is unreadable.
+*/
+.tds-colorscheme--dark .tds-form-input-select:focus,
+.tds-scrim--black .tds-form-input-select:focus {
+  background-color: var(--tds-theme-background-container);
+}
+
+/* In Arabic, the font in the button is too small. */
+[lang='ar-AE'],
+html[lang='ar-AE'],
+[lang='ar-AE'] body,
+[lang='he-IL'],
+html[lang='he-IL'],
+[lang='he-IL'] body {
+  --tds-btn--font-size: var(--tds-font-size--40);
+}
+
+button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  padding: 0;
+}
+
+button:where(:focus, .tds--focus) {
+  border-radius: var(--tds-border-radius--outline-only);
+  outline: var(--tds-outline--focus);
+}
+
+[role='button'] {
+  cursor: pointer;
+}
+
+/* Base Button */
+.tds-btn {
+  --tds-btn--background-color: var(--tds-theme-primary);
+  --tds-btn--border-color: transparent;
+  --tds-btn--border-radius: var(--tds-border-radius--pill);
+
+  /* Probably generic pill styles, cross-reference with tds-btn */
+  align-items: center;
+  block-size: var(--tds-height--pill);
+  border-radius: var(--tds-btn--border-radius);
+  box-shadow: inset 0 0 0 var(--tds-border-width--medium) transparent;
+  color: var(--tds-theme-foreground-on-primary);
+  display: inline-flex;
+  font-family: var(--tds-font-family--combined);
+  font-size: var(--tds-btn--font-size);
+  font-weight: var(--tds-font-weight--medium);
+  justify-content: center;
+  line-height: 1.2;
+  padding: var(--tds-size--half) var(--tds-size--3x);
+  position: relative;
+  text-align: center;
+
+  /* Button-specific styles */
+  text-transform: inherit;
+  border: var(--tds-border-width--large) solid var(--tds-btn--border-color);
+  background-color: var(--tds-btn--background-color);
+  transition: border-color 0.33s ease, background-color 0.33s ease,
+    color 0.33s ease, box-shadow 0.25s ease;
+}
+
+button.tds-btn {
+  vertical-align: middle;
+}
+
+/* Widths */
+
+/* TODO: Should we define specific widths? */
+@media (--tds-tablet-portrait-up) {
+  .tds-btn {
+    inline-size: auto;
+  }
+
+  .tds-btn--width-full {
+    inline-size: 100%;
+    inline-size: -webkit-fill-available;
+  }
+}
+
+@media (--tds-phone-only) {
+  .tds-btn {
+    inline-size: 100%;
+    inline-size: -webkit-fill-available;
+  }
+
+  .tds-btn--width-auto {
+    inline-size: auto;
+  }
+}
+
+/* Sizes */
+.tds-btn--small {
+  --tds-height--pill: 28px;
+
+  font-size: var(--tds-font-size--20);
+}
+
+/* Dense layouts should default to medium size buttons */
+.tds-density--dense,
+.tds-btn--medium {
+  --tds-height--pill: var(--tds-size--4x);
+}
+
+.tds-btn--large {
+  --tds-border-radius--pill: var(--tds-size--half);
+  --tds-height--pill: var(--tds-size--5x);
+}
+
+/* Variants */
+.tds-btn--secondary {
+  --tds-btn--background-color: transparent;
+  --tds-btn--border-color: var(--tds-theme-foreground-high-contrast);
+
+  color: var(--tds-theme-foreground-high-contrast);
+}
+
+/* Special case, outlined buttons should have highest-possible contrast text in dark environments */
+:is(.tds-colorscheme--dark, .tds-scrim--black) .tds-btn--secondary {
+  --tds-btn--border-color: var(--tds-color-white);
+
+  color: var(--tds-color-white);
+}
+
+.tds-btn--tertiary {
+  --tds-btn--background-color: var(--tds-theme-background-container);
+
+  color: var(--tds-theme-foreground);
+}
+
+/* Hover & Focus */
+:is(button, .tds-btn):not([disabled], .tds--disabled):is(:hover, .tds--hover) {
+  cursor: pointer;
+}
+
+.tds-btn:is(:focus, .tds--focus) {
+  box-shadow: inset 0 0 0 var(--tds-border-width--medium);
+  outline: none;
+}
+
+.tds-btn:not([disabled], .tds--disabled):is(:hover, .tds--hover) {
+  --tds-btn--background-color: var(--tds-theme-primary-highlight);
+}
+
+.tds-btn--secondary:not([disabled], .tds--disabled):is( :hover,
+  .tds--hover,
+  :focus,
+  .tds--focus) {
+  --tds-btn--background-color: var(--tds-theme-foreground-high-contrast);
+
+  color: var(--tds-color--inverse);
+}
+
+.tds-btn--tertiary:not([disabled], .tds--disabled):is(:hover, .tds--hover) {
+  --tds-btn--background-color: var(--tds-color--tertiary-highlight);
+}
+
+/* Icon support */
+.tds-btn>.tds-icon--inline:first-child {
+  margin-inline-start: calc(var(--tds-size--1x) * -1);
+}
+
+.tds-btn>.tds-icon--inline:last-child {
+  margin-inline-end: calc(var(--tds-size--1x) * -1);
+}
+
+/* Card-specific override for tertiary buttons */
+.tds-card:not(.tds-card--outline, .tds-scrim--white .tds-card--highlighted) .tds-btn--tertiary {
+  --tds-btn--background-color: var(--tds-theme-background);
+}
