@@ -19,7 +19,7 @@
       "function": {
         "SearchForIssues": {
           "deploymentBucketName": "amplify-flash-staging-153827-deployment",
-          "s3Key": "amplify-builds/SearchForIssues-634a537376314f657133-build.zip",
+          "s3Key": "amplify-builds/SearchForIssues-6f63455530552b66596e-build.zip",
           "secretsPathAmplifyAppId": "d39kyvoqepxydg"
         }
       }

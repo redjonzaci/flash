@@ -22,6 +22,7 @@ const Category = {
   "APP": "APP",
   "WEBSITE": "WEBSITE",
   "SUPERCHARGER": "SUPERCHARGER",
+  "CHARGING": "CHARGING",
   "NOT_AN_ISSUE": "NOT_AN_ISSUE"
 };
 

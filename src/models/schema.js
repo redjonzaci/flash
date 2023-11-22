@@ -145,6 +145,7 @@ export const schema = {
                 "APP",
                 "WEBSITE",
                 "SUPERCHARGER",
+                "CHARGING",
                 "NOT_AN_ISSUE"
             ]
         }

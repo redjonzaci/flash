@@ -28,5 +28,6 @@ enum Category {
   APP
   WEBSITE
   SUPERCHARGER
+  CHARGING
   NOT_AN_ISSUE
 }
